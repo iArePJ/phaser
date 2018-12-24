@@ -637,6 +637,7 @@ var SceneManager = new Class({
         }
 
         settings.status = CONST.RUNNING;
+        sys.events.emit('donecreating');
     },
 
     /**
@@ -882,6 +883,28 @@ var SceneManager = new Class({
         if (scene)
         {
             return scene.sys.isActive();
+        }
+
+        return null;
+    },
+
+    /**
+     * Determines whether a Scene is active.
+     *
+     * @method Phaser.Scenes.SceneManager#isPaused
+     * @since 3.0.0
+     *
+     * @param {string} key - The Scene to check.
+     *
+     * @return {boolean} Whether the Scene is paused.
+     */
+    isPaused: function (key)
+    {
+        var scene = this.getScene(key);
+
+        if (scene)
+        {
+            return scene.sys.isPaused();
         }
 
         return null;
