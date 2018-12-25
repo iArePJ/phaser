@@ -1200,16 +1200,17 @@ var SceneManager = new Class({
      * @since 3.0.0
      *
      * @param {string} key - The Scene to stop.
+     * @param {object} data - The data to be sent.
      *
      * @return {Phaser.Scenes.SceneManager} This SceneManager.
      */
-    stop: function (key)
+    stop: function (key, data)
     {
         var scene = this.getScene(key);
 
         if (scene && !scene.sys.isTransitioning())
         {
-            scene.sys.shutdown();
+            scene.sys.shutdown(data);
         }
 
         return this;
