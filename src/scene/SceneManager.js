@@ -1183,9 +1183,13 @@ var SceneManager = new Class({
 
         sys.events.on('donecreating', function ()
         {
-            for (var s in scene.scene.manager.scenes.filter(function (a) { return a.sys.isActive() && a.sys.settings.key !== key; }))
+            for (var s in scene.scene.manager.scenes)
             {
-                s.sys.pause();
+                if (scene.scene.manager.scenes[s].sys.isActive() && scene.scene.manager.scenes[s].sys.settings.key !== key)
+                {
+                    console.log(scene.scene.manager.scenes[s].sys.settings.key + 'Paused');
+                    scene.scene.manager.scenes[s].sys.pause();
+                }
             }
         });
     },
