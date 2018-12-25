@@ -609,14 +609,15 @@ var ScenePlugin = new Class({
      * @since 3.0.0
      *
      * @param {string} key - The Scene to stop.
+     * @param {string} data - The Scene to send.
      *
      * @return {Phaser.Scenes.ScenePlugin} This ScenePlugin object.
      */
-    stop: function (key)
+    stop: function (key, data)
     {
         if (key === undefined) { key = this.key; }
 
-        this.manager.queueOp('stop', key);
+        this.manager.queueOp('stop', key, data);
 
         return this;
     },
