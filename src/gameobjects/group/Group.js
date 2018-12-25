@@ -1191,10 +1191,12 @@ var Group = new Class({
      * @since 3.0.0
      *
      * @param {boolean} [destroyChildren=false] - Also {@link Phaser.GameObjects.GameObject#destroy} each group member.
+     * @param {boolean} [keepAlive=false] - Keep group object alive for reuse.
      */
-    destroy: function (destroyChildren)
+    destroy: function (destroyChildren, keepAlive)
     {
         if (destroyChildren === undefined) { destroyChildren = false; }
+        if (keepAlive === undefined) { keepAlive = false; }
 
         //  This Game Object had already been destroyed
         if (!this.scene || this.ignoreDestroy)
@@ -1219,8 +1221,11 @@ var Group = new Class({
 
         this.children.clear();
 
-        this.scene = undefined;
-        this.children = undefined;
+        if (keepAlive === false)
+        {
+            this.scene = undefined;
+            this.children = undefined;
+        }
     }
 
 });
