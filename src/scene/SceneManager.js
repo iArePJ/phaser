@@ -1187,7 +1187,6 @@ var SceneManager = new Class({
             {
                 if (scene.scene.manager.scenes[s].sys.isActive() && scene.scene.manager.scenes[s].sys.settings.key !== key)
                 {
-                    console.log(scene.scene.manager.scenes[s].sys.settings.key + 'Paused');
                     scene.scene.manager.scenes[s].sys.pause();
                 }
             }
