@@ -1120,6 +1120,13 @@ var SceneManager = new Class({
 
             return this;
         }
+        if (data)
+        {
+            if (data.hasOwnProperty('pauseAllScenes'))
+            {
+                this.pauseAllScenes(key);
+            }
+        }
 
         var scene = this.getScene(key);
 
@@ -1138,25 +1145,25 @@ var SceneManager = new Class({
                 scene.sys.start(data);
 
                 var loader;
-    
+
                 if (scene.sys.load)
                 {
                     loader = scene.sys.load;
                 }
-    
+
                 //  Files payload?
                 if (loader && scene.sys.settings.hasOwnProperty('pack'))
                 {
                     loader.reset();
-    
+
                     if (loader.addPack({ payload: scene.sys.settings.pack }))
                     {
                         scene.sys.settings.status = CONST.LOADING;
-    
+
                         loader.once('complete', this.payloadComplete, this);
-    
+
                         loader.start();
-    
+
                         return this;
                     }
                 }
@@ -1166,6 +1173,21 @@ var SceneManager = new Class({
         }
 
         return this;
+    },
+
+    pauseAllScenes: function (key)
+    {
+        var scene = this.getScene(key);
+
+        var sys = scene.sys;
+
+        sys.events.on('donecreating', function ()
+        {
+            for (var s in scene.scene.manager.scenes.filter(function (a) { return a.sys.isActive() && a.sys.settings.key !== key; }))
+            {
+                s.sys.pause();
+            }
+        });
     },
 
     /**
