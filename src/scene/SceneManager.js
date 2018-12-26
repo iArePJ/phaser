@@ -1175,24 +1175,6 @@ var SceneManager = new Class({
         return this;
     },
 
-    pauseAllScenes: function (key)
-    {
-        var scene = this.getScene(key);
-
-        var sys = scene.sys;
-
-        sys.events.on('donecreating', function ()
-        {
-            for (var s in scene.scene.manager.scenes)
-            {
-                if (scene.scene.manager.scenes[s].sys.isActive() && scene.scene.manager.scenes[s].sys.settings.key !== key)
-                {
-                    scene.scene.manager.scenes[s].sys.pause();
-                }
-            }
-        });
-    },
-
     /**
      * Stops the given Scene.
      *
