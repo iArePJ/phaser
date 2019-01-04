@@ -885,10 +885,6 @@ var InputManager = new Class({
             every[i](event);
         }
 
-        this.domCallbacks.upOnce = [];
-        this.domCallbacks.downOnce = [];
-        this.domCallbacks.moveOnce = [];
-
         return (every.length > 0);
     },
 
@@ -911,6 +907,8 @@ var InputManager = new Class({
             var callbacks = this.domCallbacks;
 
             this._hasDownCallback = this.processDomCallbacks(callbacks.downOnce, callbacks.down, event);
+
+            callbacks.downOnce = [];
         }
     },
 
@@ -933,6 +931,8 @@ var InputManager = new Class({
             var callbacks = this.domCallbacks;
 
             this._hasMoveCallback = this.processDomCallbacks(callbacks.moveOnce, callbacks.move, event);
+
+            callbacks.moveOnce = [];
         }
     },
 
@@ -955,6 +955,8 @@ var InputManager = new Class({
             var callbacks = this.domCallbacks;
 
             this._hasUpCallback = this.processDomCallbacks(callbacks.upOnce, callbacks.up, event);
+
+            callbacks.upOnce = [];
         }
     },
 
@@ -992,6 +994,8 @@ var InputManager = new Class({
             var callbacks = this.domCallbacks;
 
             this._hasDownCallback = this.processDomCallbacks(callbacks.downOnce, callbacks.down, event);
+
+            callbacks.downOnce = [];
         }
     },
 
@@ -1014,6 +1018,8 @@ var InputManager = new Class({
             var callbacks = this.domCallbacks;
 
             this._hasMoveCallback = this.processDomCallbacks(callbacks.moveOnce, callbacks.move, event);
+
+            callbacks.moveOnce = [];
         }
     },
 
@@ -1036,6 +1042,8 @@ var InputManager = new Class({
             var callbacks = this.domCallbacks;
 
             this._hasUpCallback = this.processDomCallbacks(callbacks.upOnce, callbacks.up, event);
+
+            callbacks.upOnce = [];
         }
     },
 

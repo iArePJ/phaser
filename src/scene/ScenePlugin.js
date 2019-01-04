@@ -679,7 +679,7 @@ var ScenePlugin = new Class({
      * @method Phaser.Scenes.ScenePlugin#isSleeping
      * @since 3.0.0
      *
-     * @param {string} key - The Scene to check.
+     * @param {string} [key] - The Scene to check.
      *
      * @return {boolean} Whether the Scene is sleeping.
      */
@@ -696,7 +696,7 @@ var ScenePlugin = new Class({
      * @method Phaser.Scenes.ScenePlugin#isActive
      * @since 3.0.0
      *
-     * @param {string} key - The Scene to check.
+     * @param {string} [key] - The Scene to check.
      *
      * @return {boolean} Whether the Scene is active.
      */
@@ -713,7 +713,7 @@ var ScenePlugin = new Class({
      * @method Phaser.Scenes.ScenePlugin#isVisible
      * @since 3.0.0
      *
-     * @param {string} key - The Scene to check.
+     * @param {string} [key] - The Scene to check.
      *
      * @return {boolean} Whether the Scene is visible.
      */
@@ -811,7 +811,7 @@ var ScenePlugin = new Class({
      * @method Phaser.Scenes.ScenePlugin#remove
      * @since 3.2.0
      *
-     * @param {(string|Phaser.Scene)} key - The Scene to be removed.
+     * @param {(string|Phaser.Scene)} [key] - The Scene to be removed.
      *
      * @return {Phaser.Scenes.SceneManager} This SceneManager.
      */
@@ -830,7 +830,7 @@ var ScenePlugin = new Class({
      * @method Phaser.Scenes.ScenePlugin#moveUp
      * @since 3.0.0
      *
-     * @param {string} key - The Scene to move.
+     * @param {string} [key] - The Scene to move.
      *
      * @return {Phaser.Scenes.ScenePlugin} This ScenePlugin object.
      */
@@ -849,7 +849,7 @@ var ScenePlugin = new Class({
      * @method Phaser.Scenes.ScenePlugin#moveDown
      * @since 3.0.0
      *
-     * @param {string} key - The Scene to move.
+     * @param {string} [key] - The Scene to move.
      *
      * @return {Phaser.Scenes.ScenePlugin} This ScenePlugin object.
      */
@@ -870,7 +870,7 @@ var ScenePlugin = new Class({
      * @method Phaser.Scenes.ScenePlugin#bringToTop
      * @since 3.0.0
      *
-     * @param {string} key - The Scene to move.
+     * @param {string} [key] - The Scene to move.
      *
      * @return {Phaser.Scenes.ScenePlugin} This ScenePlugin object.
      */
@@ -891,7 +891,7 @@ var ScenePlugin = new Class({
      * @method Phaser.Scenes.ScenePlugin#sendToBack
      * @since 3.0.0
      *
-     * @param {string} key - The Scene to move.
+     * @param {string} [key] - The Scene to move.
      *
      * @return {Phaser.Scenes.ScenePlugin} This ScenePlugin object.
      */
